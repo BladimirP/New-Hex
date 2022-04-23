@@ -5,19 +5,19 @@ function App() {
 
   const datos = [{
     "nombreEje": "Armonización Curricular y Foco en Posgrados Tecnológicos",
-    "porcentaje": "0%"
+    "porcentaje": "0"
     },{
     "nombreEje": "Capital Humano y Gestión del Cambio",
-    "porcentaje": "0%"
+    "porcentaje": "0"
   },{
     "nombreEje": "Alianzas Internacionales",
-    "porcentaje": "0%"
+    "porcentaje": "60"
   },{
     "nombreEje": "I+D APLICADO Y VINCULO INDUSTRIA",
-    "porcentaje": "0%"
+    "porcentaje": "0"
   },{
     "nombreEje": "Comercialización de Tecnología y Emprendimiento",
-    "porcentaje": "0%"
+    "porcentaje": "0"
   }
 ]
   const indicadores = [{
