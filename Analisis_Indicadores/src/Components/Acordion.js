@@ -7,28 +7,11 @@ const Acordion = (props) => {
 
   const [indi, setIndi] = useState(props.indicadores)
 
-  const style = {
-    margin: '0.5em',
-    paddingLeft: 0,
-    listStyle: 'none',
-  };
-  const style0 = {
-    color: "red"
-  }
-  const style10= {
-    color: "green"
-  }
 
-  const calcularColor = (porcentaje) => {
-    let porcentajeInt = parseInt(porcentaje);
-    if (porcentajeInt <50){
-    return "style0" }
-    else return "style10"
-  }
 
   return (
     <div >
-        <Accordion style={style}>
+        <Accordion className='style01'>
         <Accordion.Item eventKey="0" >
           <Accordion.Header >
             
@@ -40,6 +23,7 @@ const Acordion = (props) => {
               return(
                 <div key={indicador.id}>
                   <h3 className='texto'>{indicador.nombre}</h3>
+                  <hr/>
               </div>
               )
             })}

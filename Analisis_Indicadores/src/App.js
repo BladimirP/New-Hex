@@ -1,5 +1,6 @@
 import './App.css';
 import AllAcordion from './Components/AllAcordion';
+import NavbarGeneral from './Components/NavbarGeneral';
 
 function App() {
 
@@ -33,7 +34,8 @@ function App() {
 ]
   return (
     <div className="App">
-      <AllAcordion info={datos} infoIndicadores={indicadores}/>
+      <NavbarGeneral/>
+      {/*<AllAcordion info={datos} infoIndicadores={indicadores}/>*/}
     </div>
   );
 }
