@@ -93,7 +93,7 @@ const valoresApi = [
 const Academicos = () => {
   const [datos2,setDatos] = useState(datos)
   return (
-    <div > 
+    <div> 
       <Table  striped >
         <thead className='tablasFijas'>
           <tr >

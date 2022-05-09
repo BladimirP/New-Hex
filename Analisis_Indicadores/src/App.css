@@ -2,6 +2,9 @@
   text-align: center;
 
 }
+.container2{
+  background-color: green;
+}
 
 .App-logo {
   height: 40vmin;
@@ -36,4 +39,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+section {
+  color: #fff;
+  background-color: white;
+  height: 100vh;  
+}
+.navBg {
+  background-color: white;
+  color: black;
+  font-family: 'Roboto', sans-serif;
 }

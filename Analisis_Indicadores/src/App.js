@@ -1,6 +1,20 @@
 import './App.css';
 import AllAcordion from './Components/AllAcordion';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import NavbarGeneral from './Components/NavbarGeneral';
+
+//Importancion de componentes
+import Academicos from './Rutas/Academicos';
+import Programas from './Rutas/Programas';
+import Laboratorios from './Rutas/Laboratorios';
+import Disclosures from './Rutas/Disclosures';
+import PI from './Rutas/PI';
+import Licencias from './Rutas/Licencias';
+import Proyectos from './Rutas/Proyectos';
+import Emprendimiento from './Rutas/Emprendimiento';
+import Publicaciones from './Rutas/Publicaciones';
+import Alianzas from './Rutas/Alianzas';
+import Evidencias from './Rutas/Evidencias';
 
 function App() {
 
@@ -34,7 +48,24 @@ function App() {
 ]
   return (
     <div className="App">
-      <NavbarGeneral/>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={ <NavbarGeneral/>}>
+          <Route index element={ <Evidencias/> }/>
+          <Route path='academicos' element={ <Academicos/>}/>
+          <Route path='programas' element={ <Programas/> }/>
+          <Route path='laboratorios' element= {<Laboratorios/>}/>
+          <Route path='disclosures' element= {<Disclosures/>}/>
+          <Route path='pi' element= {<PI/>}/>
+          <Route path='licencias' element= {<Licencias/>}/>
+          <Route path='proyectos' element= {<Proyectos/>}/>
+          <Route path='emprendimiento' element= {<Emprendimiento/>}/>
+          <Route path='publicaciones' element= {<Publicaciones/>}/>
+          <Route path='alianzas' element= {<Alianzas/>}/>
+          {/*<Route path='*' element={ <Navigate replace to="/"/> }/>*/}
+        </Route>
+      </Routes>
+      </BrowserRouter>
       {/*<AllAcordion info={datos} infoIndicadores={indicadores}/>*/}
     </div>
   );

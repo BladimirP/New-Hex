@@ -1,66 +1,36 @@
 import React from 'react'
-import Tab from 'react-bootstrap/Tab'
-import Tabs from 'react-bootstrap/Tabs'
-
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import Academicos from '../Rutas/Academicos'
-import Programas from '../Rutas/Programas'
-import Laboratorios from '../Rutas/Laboratorios'
-import Disclosures from '../Rutas/Disclosures'
-import PI from '../Rutas/PI'
-import Licencias from '../Rutas/Licencias'
-import Proyectos from '../Rutas/Proyectos'
-import Emprendimiento from '../Rutas/Emprendimiento'
-import Publicaciones from '../Rutas/Publicaciones'
-import Alianzas from '../Rutas/Alianzas'
-import Evidencias from '../Rutas/Evidencias'
-
-
+import { Navbar, Nav, Container } from "react-bootstrap"
+import { Outlet, Link } from "react-router-dom"
 
 
 const NavbarGeneral = () => {
   return (
-    <div ><Tabs
-    defaultActiveKey="Evidencias"
-    transition={false}
-    id="noanim-tab-example"
-    className="mb-3 styleTabs"
-  >
-    <Tab className='container' eventKey="Evidencias" title="Evidencias">
-      <Evidencias />
-    </Tab>
-    <Tab className='container' eventKey="Programas y Carreras" title="Programas y Carreras">
-      <Programas />
-    </Tab>
-    <Tab className='container' eventKey="Academicos" title="Academicos"  >
-      <Academicos />
-    </Tab>
-    <Tab className='container' eventKey="Laboratorios" title="Laboratorios">
-      <Laboratorios/>
-    </Tab>
-    <Tab className='container' eventKey="Disclosures" title="Disclosures" >
-      <Disclosures/>
-    </Tab>
-    <Tab className='container' eventKey="PI" title="PI">
-      <PI/>
-    </Tab>
-    <Tab className='container' eventKey="Licencias" title="Licencias">
-      <Licencias/>
-    </Tab>
-    <Tab className='container' eventKey="Proyectos" title="Proyectos">
-      <Proyectos/>
-    </Tab>
-    <Tab className='container' eventKey="Emprendimiento" title="Emprendimiento">
-      <Emprendimiento/>
-    </Tab>
-    <Tab className='container' eventKey="Publicaciones" title="Publicaciones">
-      <Publicaciones/>
-    </Tab>
-    <Tab className='container' eventKey="Alianzas" title="Alianzas">
-      <Alianzas/>
-    </Tab>
-
-  </Tabs></div>
+    <>
+      <Navbar className='navBg' expand="lg" >
+        <Container>
+          <Navbar.Brand>Innoving 2030</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className='me-auto'>
+            <Nav.Link as={Link} to="/">Evidencias</Nav.Link>
+            <Nav.Link as={Link} to="/academicos">Academicos</Nav.Link>
+            <Nav.Link as={Link} to="/programas">Programas</Nav.Link>
+            <Nav.Link as={Link} to="/laboratorios">Laboratorios</Nav.Link>
+            <Nav.Link as={Link} to="/pi">PI</Nav.Link>
+            <Nav.Link as={Link} to="/disclosures">Disclosures</Nav.Link>
+            <Nav.Link as={Link} to="/licencias">Licencias</Nav.Link>
+            <Nav.Link as={Link} to="/proyectos">Proyectos</Nav.Link>
+            <Nav.Link as={Link} to="/emprendimiento">Emprendimiento</Nav.Link>
+            <Nav.Link as={Link} to="/publicaciones">Publicaciones</Nav.Link>
+            <Nav.Link as={Link} to="/alianzas">Alianzas</Nav.Link>
+          </Nav>
+          </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    <section>
+      <Outlet></Outlet>
+    </section>
+  </>
   )
 }
 

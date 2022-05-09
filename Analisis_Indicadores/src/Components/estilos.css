@@ -30,12 +30,7 @@
     height: 100%;
     width: 100%;
 }
-.container{
-    overflow: scroll;
-    position: absolute;
-    height: 100%;
-    width: 100%
-}
+
 
 tr, th{
     min-width: 200px;
