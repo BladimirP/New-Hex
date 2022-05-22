@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Table from 'react-bootstrap/Table'
+import { ExcelDoble } from '../Components/FactoryExcel'
 
 const valoresApi = [
   [1, 2017, '016-2017', '(WWF) INICIATIVA DE TECNOLOGÍA SOCIAL PARA EL MONITOREO COLABORATIVO DE LA FAUNA MARINA EN LA REGION DE LOS LAGOS, ORIENTADO A CONSERVACIÓN, TURISMO Y EDUCACIÓN', 'Gustavo Schleyer', 'X', 'NULL', 'NULL', 'NULL', 'NULL', 'OTL', 'DIRECTOR', 'Germán Rehren'],
@@ -14,52 +14,7 @@ const Disclosures = () => {
   //const [datos2,setDatos] = useState(datos)
   return (
     <div>
-      <Table bordered striped>
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th>Investigador Principal</th>
-            <th colSpan="5">El resultado se logró producto de financiamiento de:</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-          <tr>
-            <th></th>
-            <th >AÑO</th>
-            <th scope='col'>ID Disclosure</th>
-            <th scope='col'>Nombre de resultado tecnológico</th>
-            <th>Nombre y apellido</th>
-            <th>Fondos Públicos</th>
-            <th>Fondos Propios</th>
-            <th>Fondos Privados</th>
-            <th>Fondos ONG</th>
-            <th>Fondos Internacionales</th>
-            <th>FUENTE DE INFORMACIÓN</th>
-            <th>CARGO AUTORIDAD QUE VALIDA INFORMACIÓN </th>
-            <th>NOMBRE AUTORIDAD QUE VALIDA INFORMACIÓN </th>
-          </tr>
-        </thead>
-        <tbody>
-            {valoresApi.map((valor,Index) => {
-              return(
-                <>
-                <tr className="disclosures" key={Index}>
-                  {valor.map((valores) => {
-                    return (
-                    <td >{valores == "NULL" ? "" : valores}</td>
-                    )
-                  })}
-                </tr>
-              
-                </>
-              )
-            })}
-        </tbody>
-      </Table>
+      <ExcelDoble valoresApi={valoresApi} clase={"tablasFijas"}/>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Table from 'react-bootstrap/Table'
+import { ExcelSimple } from '../Components/FactoryExcel'
 
 const datos =
 ['Nº', 'AÑO REPORTE', 'Nombre de la empresa', 'Actividad económica de la empresa', 'Fecha de creación de la empresa', 'Iniciativa donde se origina ', 'Id. PI Asociada', 'Id. Disclosure asociado', 'Id. Licencia asociada', 'Porcentaje Propiedad Universidad', 'Número Total de Socios', 'Número de Mujeres Socias', 'Número Total de Socios Funcionarios', 'Número de Socias Funcionarias', 'Número Total de Socios Alumnos / Exalumnos', 'Número  socias Alumnas / Exalumnas', 'Número Total de trabajos creados hombres ', 'Número Total de trabajos creados mujeres', 'Ingresos Generados ($M)', 'AÑO Ingresos generados', 'Inversión externa levantada  ($M)', 'AÑO Inversión levantada ', 'Unidad Responsable', 'Fuente de la Información', 'CARGO AUTORIDAD QUE VALIDA INFORMACIÓN ', 'NOMBRE AUTORIDAD QUE VALIDA INFORMACIÓN ']
@@ -14,34 +15,8 @@ const valoresApi = [
 const Emprendimiento = () => {
   const [datos2,setDatos] = useState(datos)
   return (
-    <div>
-      <Table responsive="xl" size='sm' striped >
-        <thead>
-          <tr className='emprendimiento'>
-            {datos2.map((valor,Index) => {
-              return(
-                <th key={Index}>{valor}</th>
-              )
-            })}
-          </tr>
-        </thead>
-        <tbody>
-            {valoresApi.map((valor,Index) => {
-              return(
-                <>
-                <tr key={Index}>
-                  {valor.map((valores) => {
-                    return (
-                    <td >{valores}</td>
-                    )
-                  })}
-                </tr>
-              
-                </>
-              )
-            })}
-        </tbody>
-      </Table>
+    <div> 
+      <ExcelSimple datos2={datos2} valoresApi={valoresApi} clase={"tablasFijas"}/>
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Table from 'react-bootstrap/Table'
+import { ExcelSimple } from '../Components/FactoryExcel'
 
 const datos = 
   ['N°', 'A.1 RUT', 'A.2 APELLIDO PATERNO', 'A.3. APELLIDO MATERNO', 'A.4. NOMBRES', 'A.5. GENERO', 'A.6. CORREO ELECTRONICO', 'C.1. FECHA INGRESO INSTITUCION (MES/AÑO)', 'C.2. OCUPACION (ACA-INV-TEC-OTRO)', 'C.3. TIPO DE CONTRATO 2014', 'C.4. CATEGORIA DOCENTE (SI APLICA)', 'C.5. DEPARTAMENTO ASOCIADO', 'TITULO PREGRADO', 'INSTITUCIÓN', 'AÑO', 'TITULO MAGISTER', 'INSTITUCIÓN.1', 'AÑO.1', 'GRADO DOCTORADO', 'INSTITUCIÓN.2', 'AÑO.2', 'Jornada', 'HORAS PREGRADO', 'HORAS POSTGRADO MAGISTER', 'HORAS CDC AÑO INFORME ', 'HORAS  I&D AÑO INFORME', 'HORAS i&e AÑO INFORME ', 'FUENTE DE INFORMACIÓN', 'CARGO AUTORIDAD QUE VALIDA INFORMACIÓN ', 'NOMBRE AUTORIDAD QUE VALIDA INFORMACIÓN ']
@@ -20,107 +20,12 @@ const valoresApi =
 
 ]
 
-/*
-const valoresApi = [
-  [
-    1,
-    "12345678-9",
-    "Saez",
-    "Jara" ,
-    "Fabio Antonio",
-    "Masculino",
-    "correo@gmail.com",
-    "2040,Enero",
-    "OTRO",
-    "Honorario",
-    "Categoria1",
-    "Instituto de informatica",
-    "Ingeniero En ingenieria",
-    "Universidad austral de chile"
-  ],[
-    2,
-    "12345678-9",
-    "Saez",
-    "Jara" ,
-    "Fabio Antonio",
-    "Masculino",
-    "correo@gmail.com",
-    "2040,Enero",
-    "OTRO",
-    "Honorario",
-    "Categoria1",
-    "Instituto de informatica",
-    "Ingeniero En ingenieria",
-    "Universidad austral de chile"
-  ],
-  [
-    3,
-    "12345678-9",
-    "Saez",
-    "Jara" ,
-    "Fabio Antonio",
-    "Masculino",
-    "correo@gmail.com",
-    "2040,Enero",
-    "OTRO",
-    "Honorario",
-    "Categoria1",
-    "Instituto de informatica",
-    "Ingeniero En ingenieria",
-    "Universidad austral de chile"
-  ],
-  [
-    3,
-    "12345678-9",
-    "Saez",
-    "Jara" ,
-    "Fabio Antonio",
-    "Masculino",
-    "correo@gmail.com",
-    "2040,Enero",
-    "OTRO",
-    "Honorario",
-    "Categoria1",
-    "Instituto de informatica",
-    "Ingeniero En ingenieria",
-    "Universidad austral de chile"
-  ],
-
-]
-*/
-
 
 const Academicos = () => {
   const [datos2,setDatos] = useState(datos)
   return (
     <div> 
-      <Table  striped >
-        <thead className='tablasFijas'>
-          <tr >
-            {datos2.map((valor,Index) => {
-              return(
-                <th key={Index}>{valor}</th>
-              )
-            })}
-          </tr>
-        </thead>
-        <tbody>
-            {valoresApi.map((valor,Index) => {
-              return(
-                <>
-                <tr key={Index}>
-                  {valor.map((valores) => {
-                    return (
-                    <td>{valores}</td>
-                    )
-                  })}
-                </tr>
-              
-                </>
-              )
-            })}
-        </tbody>
-      </Table>
+      <ExcelSimple datos2={datos2} valoresApi={valoresApi} clase={"tablasFijas"}/>
     </div>
   )
 }

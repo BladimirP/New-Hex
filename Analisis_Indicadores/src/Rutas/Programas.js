@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Table from 'react-bootstrap/Table'
+import { ExcelSimple } from '../Components/FactoryExcel'
 
 
 const datos = ['NOMBRE CARRERA O CURSO CPD', 'NOMBRE INSTITUCIÓN', 'NIVEL GLOBAL', 'CÓDIGO CARRERA (SIES)', 'FECHA RESOLUCIÓN APRUEBA PROGRAMA', 'AÑO', 'TOTAL MATRICULADOS', 'MATRICULADOS MUJERES ', 'MATRICULADOS HOMBRES ', 'TOTAL ESTUDIANTES MINORÍAS ', 'TOTAL MATRICULADOS PRIMER AÑO', 'MATRICULADOS MUJERES PRIMER AÑO', 'MATRICULADOS HOMBRES PRIMER AÑO', 'TOTAL TITULADOS POR CARRERA', 'TITULADOS MUJERES POR CARRERA', 'TITULADOS HOMBRES POR CARRERA', 'TOTAL TITULADOS MINORÍAS ', 'TOTAL ALUMNOS EXTRANJEROS HOMBRE', 'TOTAL ALUMNOS EXTRANJEROS MUJER', 'ÁREA DEL CONOCIMIENTO', 'ÁREA CARRERA GENÉRICA', 'MODALIDAD', 'JORNADA', 'Horas de Inglés en Programa', 'DISEÑO IMPLEMENTADO SCT (SÍ/NO)', 'DURACIÓN CARRERA (en SCT)', 'FECHA Última Modificación', 'DURACIÓN CARRERA (en semestres)', 'ESTADO REDUCCION DURACIÓN', 'DURACIÓN 2018', 'DURACIÓN 2019', 'DURACIÓN 2020', 'PROMEDIO TITULACIÓN (en semestres)', 'Acreditación Nacional', 'Acreditación Internacional', '% Retención 1er año', '% Retención 1er año (hombres)', '% Retención 1er año (mujeres)', '% Retención 2do Año', '% Retención 2do año (hombres)', '% Retención 2do año (mujeres)', '% Retención 3er año', '% Retención 3er año (hombres)', '% Retención 3er año (mujeres)', '% Retención 4to año', '% Retención 4to año (hombres)', '% Retención 4to año (mujeres)', 'ENCUESTA SATISFACCIÓN ', '% MUY BUENO B', '%        BUENO ', '%   REGULAR', '%         MALO', 'UNIDAD ACADÉMICA RESPONSABLE ', 'NOMBRE DIRECTOR/JEFE DE CARRERA O CURSO', 'N° Académicos', 'JCE ACADÉMICOS', 'JCE PROFESIONALES', 'N° ESTUDIANTES EN EL EXTRANJERO', 'FUENTE DE INFORMACIÓN', 'CARGO AUTORIDAD QUE VALIDA INFORMACIÓN ', 'NOMBRE AUTORIDAD QUE VALIDA INFORMACIÓN ']
@@ -18,34 +19,8 @@ const Programas = () => {
 
   const [datos2,setDatos] = useState(datos)
   return (
-    <div>
-      <Table responsive="xl" size='sm' >
-        <thead>
-          <tr>
-            {datos2.map((valor,Index) => {
-              return(
-                <th key={Index}>{valor}</th>
-              )
-            })}
-          </tr>
-        </thead>
-        <tbody>
-            {valoresApi.map((valor,Index) => {
-              return(
-                <>
-                <tr key={Index}>
-                  {valor.map((valores) => {
-                    return (
-                     <td >{valores}</td>
-                    )
-                  })}
-                </tr>
-               
-                </>
-              )
-            })}
-        </tbody>
-      </Table>
+    <div> 
+      <ExcelSimple datos2={datos2} valoresApi={valoresApi} clase={"tablasFijas"}/>
     </div>
   )
 }
